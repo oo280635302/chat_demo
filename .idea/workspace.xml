@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="301bedf7-5d08-4a71-9712-4b30b1231171" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/chat_server/src/tool/trie.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat_server/src/tool/trie_test.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="C:\Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="25rUAa81uXa8RqGrQosjdhSojC3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
+  </component>
+  <component name="RunManager" selected="Go Build.go build chat_server/src">
+    <configuration name="go build chat_client.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="chat_demo" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/client/chat_client.go" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build chat_server/src" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="chat_demo" />
+      <working_directory value="$PROJECT_DIR$/chat_server" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/chat_server/src/main.go" />
+      <package value="chat_server/src" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_trie in chat_server/src/tool" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="chat_demo" />
+      <working_directory value="$PROJECT_DIR$/chat_server/src/tool" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="chat_server/src/tool" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^Test_trie$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build chat_server/src" />
+        <item itemvalue="Go Test.Test_trie in chat_server/src/tool" />
+        <item itemvalue="Go Build.go build chat_client.go" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+    <proxy>https://mirrors.aliyun.com/goproxy/</proxy>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1646292616544">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1646292616544" />
+    <state x="668" y="154" key="#go_build_chat_client.go" timestamp="1646284996448">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="668" y="154" key="#go_build_chat_client.go/0.0.1920.1040@0.0.1920.1040" timestamp="1646284996448" />
+    <state x="714" y="389" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1646285004666">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="714" y="389" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1646285004666" />
+    <state x="560" y="212" key="CommitChangelistDialog2" timestamp="1646301325083">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="560" y="212" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1646301325083" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1646285118548">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1646285118548" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1646300136276">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1646300136276" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1646300136275">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1646300136275" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1646300136275">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1646300136275" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1646300136276">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1646300136276" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1646300136276">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1646300136276" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1646300136276">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1646300136276" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1646300136276">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1646300136276" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1646300136276">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1646300136276" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1646285119016">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1646285119016" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1646299897121">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1646299897121" />
+  </component>
+</project>
