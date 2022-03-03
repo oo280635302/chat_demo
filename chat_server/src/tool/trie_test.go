@@ -1,6 +1,9 @@
 package tool
 
-import "testing"
+import (
+	"strings"
+	"testing"
+)
 
 func Test_Trie(t *testing.T) {
 	tn := NewTrieNode()
@@ -18,13 +21,13 @@ func Test_Trie(t *testing.T) {
 	t.Log(s)
 }
 
-// 16核 4000ns/op
+// 16核 15000ns/op
 func Benchmark_Trie(b *testing.B) {
 	tn := NewTrieNode()
-	tn.Insert("shit")
-	tn.Insert("fuck")
-	tn.Insert("fucker")
-
+	Libs := strings.Split(TRIELIBRARY, "\n")
+	for _, v := range Libs {
+		tn.Insert(v)
+	}
 	for i := 0; i < b.N; i++ {
 		tn.Replace("oh shit fucker fucccker shit fuckee fuc s shit shiit  shhit !")
 	}
