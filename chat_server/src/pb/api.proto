@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package proto;
+
+enum API {
+    None = 0;
+    Login = 1;
+}
+
+message Request {
+    API api = 1;
+    bytes data = 2;
+}
+
+message LoginReq {
+    string user_name = 1;
+}
+

@@ -1,4 +1,4 @@
-package tool
+package common
 
 const TRIELIBRARY = `4r5e
 5h1t

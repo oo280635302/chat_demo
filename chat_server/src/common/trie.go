@@ -1,8 +1,21 @@
-package tool
+package common
+
+import "strings"
 
 type TrieNode struct {
 	Node map[rune]*TrieNode
 	End  bool
+}
+
+var Trie *TrieNode
+
+func InitTrieNode() {
+	t := NewTrieNode()
+	Libs := strings.Split(TRIELIBRARY, "\n")
+	for _, v := range Libs {
+		t.Insert(v)
+	}
+	Trie = t
 }
 
 func NewTrieNode() *TrieNode {
