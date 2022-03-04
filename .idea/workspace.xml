@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="301bedf7-5d08-4a71-9712-4b30b1231171" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/chat_server/src/common/Init.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat_server/src/conn/api.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat_server/src/conn/conn.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat_server/src/core/Init.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat_server/src/core/online.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat_server/src/pb/api.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_client/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/chat_client/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat_client/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_client/src/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_server/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_server/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_server/src/tool/trie.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/common/trie.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_server/src/tool/trie_lib.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/common/trie_lib.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_server/src/tool/trie_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/common/trie_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat_server/src/conn/conn.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/conn/conn.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +105,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="脏词库" />
-    <option name="LAST_COMMIT_MESSAGE" value="脏词库" />
+    <MESSAGE value="tcp" />
+    <option name="LAST_COMMIT_MESSAGE" value="tcp" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -137,10 +125,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="714" y="389" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1646285004666" />
-    <state x="342" y="212" width="1018" height="714" key="CommitChangelistDialog2" timestamp="1646303448358">
+    <state x="342" y="212" width="1018" height="714" key="CommitChangelistDialog2" timestamp="1646390489677">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="342" y="212" width="1018" height="714" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1646303448358" />
+    <state x="342" y="212" width="1018" height="714" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1646390489677" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1646359922669">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -181,10 +169,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1646285119016" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1646303457666">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1646390715722">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1646303457666" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1646390715722" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1646359518304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

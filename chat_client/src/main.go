@@ -12,14 +12,16 @@ func main() {
 		fmt.Println("dial err: ", err)
 		return
 	}
-	for {
-		s := "what are you 弄啥？"
-		_, err := conn.Write([]byte(s))
-		if err != nil {
-			fmt.Println("writ err:", err)
-			return
-		}
-		time.Sleep(time.Second)
+	defer conn.Close()
+
+	//for {
+	s := "what are you 弄啥？"
+	_, err = conn.Write([]byte(s))
+	if err != nil {
+		fmt.Println("writ err:", err)
+		return
 	}
+	time.Sleep(time.Second)
+	//}
 
 }

@@ -32,10 +32,14 @@ func HandlerConnect(conn net.Conn) {
 		buf := make([]byte, 8192)
 		n, err := conn.Read(buf)
 		if err != nil {
+			if err.Error() == "EOF" {
+				fmt.Println("客户端溜了~", addr)
+				return
+			}
 			fmt.Println("client addr exit:", err, addr)
 			return
 		}
-		fmt.Println(string(buf))
+		fmt.Println(string(buf[:n]), n)
 		req := &pb.Request{}
 		proto.Unmarshal(buf[:n], req)
 
