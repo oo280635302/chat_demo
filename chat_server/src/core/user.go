@@ -1,6 +1,7 @@
 package core
 
 import (
+	"chat_server/src/common"
 	pb "chat_server/src/pb"
 	"github.com/gogo/protobuf/proto"
 	"net"
@@ -25,41 +26,39 @@ func (u *User) Login(b []byte) {
 	proto.Unmarshal(b, req)
 
 	if len(u.UserName) != 0 {
-		u.Send("不要重复登录")
+		u.Reply("不要重复登录")
 		return
 	}
 	u.mutex.Lock()
 	defer u.mutex.Unlock()
 
-	u.UserName = req.UserName
-
 	// 查
-	userData, ok := UserDB[req.UserName]
+	user, ok := UserDB[req.UserName]
+
+	tm := time.Now().Unix()
 
 	// 新增用户
 	if !ok {
-		userData = User{
-			UserName:      req.UserName,
-			LastLoginTime: time.Now().Unix(),
-			RoomId:        0,
-			OnlineTime:    0,
-			IsOnline:      true,
-		}
+		u.IsOnline = true
+		u.LastLoginTime = tm
 
 		// 修改用户
 	} else {
-		u.RoomId = 0
-		u.LastLoginTime = time.Now().Unix()
-		u.IsOnline = true
+		if user.IsOnline {
+			u.Reply("该用户正在登陆")
+			return
+		}
 
-		userData.RoomId = 0
-		userData.IsOnline = true
-		userData.LastLoginTime = time.Now().Unix()
+		u.RoomId = 0
+		u.LastLoginTime = tm
+		u.IsOnline = true
 	}
+	u.UserName = req.UserName
 
 	// 保存数据库
-	UserDB[req.UserName] = userData
-	u.Send("登陆成功")
+	u.Save()
+
+	u.Reply("登陆成功")
 }
 
 // 登出
@@ -71,31 +70,88 @@ func (u *User) Logout() {
 		return
 	}
 
-	useData := UserDB[u.UserName]
-	useData.IsOnline = false
-
+	u.IsOnline = false
 	// 在线时长
-	onlineTime := time.Now().Unix() - useData.LastLoginTime
+	onlineTime := time.Now().Unix() - u.LastLoginTime
 	if onlineTime > 0 {
-		useData.OnlineTime += onlineTime
+		u.OnlineTime += onlineTime
 	}
-
-	// 踢出房间
+	u.RoomId = 0
 
 	// 保存
-	UserDB[u.UserName] = useData
+	u.Save()
 }
 
 // 加入房间
 func (u *User) JoinRoom(b []byte) {
+	req := new(pb.JoinRoomReq)
+	proto.Unmarshal(b, req)
 
+	if req.RoomId <= 0 {
+		u.Reply("无效的房间号")
+		return
+	}
+
+	u.mutex.Lock()
+	defer u.mutex.Unlock()
+
+	// 退出之前的房间
+	if u.RoomId != 0 {
+		RoomDB[u.RoomId].ExitRoom(u)
+	}
+
+	u.RoomId = req.RoomId
+
+	roomData, ok := RoomDB[req.RoomId]
+	// 没有就新建
+	if !ok {
+		roomData = CreateRoom(req.RoomId)
+	}
+	roomData.Users[u.UserName] = u
+
+	// 加入房间
+	roomData.JoinRoom(u)
+
+	// 保存数据
+	u.Save()
 }
 
 // 发送消息
-func (u *User) SendMessage() {
+func (u *User) SendMessage(b []byte) {
+	req := new(pb.SendMessageReq)
+	proto.Unmarshal(b, req)
 
+	if len(u.UserName) == 0 {
+		u.Reply("需要登录")
+		return
+	}
+
+	if u.RoomId == 0 {
+		u.Reply("需要在房间内才能聊天")
+		return
+	}
+
+	room := RoomDB[u.RoomId]
+
+	// 脏词过滤
+	msg := common.Trie.Replace(req.Msg, '*')
+
+	// 广播
+	room.BroadMessage(u.UserName, msg)
 }
 
-func (u *User) Send(str string) {
+// 保存用户数据
+func (u *User) Save() {
+	UserDB[u.UserName] = User{
+		UserName:      u.UserName,
+		RoomId:        u.RoomId,
+		LastLoginTime: u.LastLoginTime,
+		OnlineTime:    u.OnlineTime,
+		IsOnline:      u.IsOnline,
+	}
+}
+
+// 回复消息
+func (u *User) Reply(str string) {
 	u.conn.Write([]byte(str))
 }

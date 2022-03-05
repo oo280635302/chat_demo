@@ -11,13 +11,13 @@ func Test_Trie(t *testing.T) {
 	tn.Insert("fuck")
 	tn.Insert("fucker")
 
-	s := tn.Replace("oh shit fuck!")
+	s := tn.Replace("oh shit fuck!", '*')
 	t.Log(s)
 
-	s = tn.Replace("oh shit fucker!")
+	s = tn.Replace("oh shit fucker!", '*')
 	t.Log(s)
 
-	s = tn.Replace("oh shit fucker fucccker shit fuckee fuc s shit shiit  shhit !")
+	s = tn.Replace("oh shit fucker fucccker shit fuckee fuc s shit shiit  shhit !", '*')
 	t.Log(s)
 }
 
@@ -29,6 +29,6 @@ func Benchmark_Trie(b *testing.B) {
 		tn.Insert(v)
 	}
 	for i := 0; i < b.N; i++ {
-		tn.Replace("oh shit fucker fucccker shit fuckee fuc s shit shiit  shhit !")
+		tn.Replace("oh shit fucker fucccker shit fuckee fuc s shit shiit  shhit !", '*')
 	}
 }

@@ -39,8 +39,8 @@ func (t *TrieNode) Insert(str string) {
 }
 
 // 替换函数
-// TODO 优化建议：1.跳过已被替换的符号，2.是否有办法跳过第一次首字母的重复匹配
-func (t *TrieNode) Replace(str string) string {
+// TODO 优化建议：1.跳过已被替换的符号，前提是用于替换的是* 2.跳过第一次首字母的重复匹配
+func (t *TrieNode) Replace(str string, reStr rune) string {
 	n := len(str)
 	s := []rune(str)
 	ans := s
@@ -70,7 +70,7 @@ func (t *TrieNode) Replace(str string) string {
 		// end不是-1说明匹配到了 进行替换
 		if end != -1 {
 			for i := idx; i < end+1; i++ {
-				ans[i] = '*'
+				ans[i] = reStr
 			}
 		}
 

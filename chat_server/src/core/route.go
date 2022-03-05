@@ -9,6 +9,20 @@ import (
 	"sync"
 )
 
+// API中转
+func HandleAPI(api pb.API, user *User, b []byte) {
+	switch api {
+	case pb.API_Login:
+		user.Login(b)
+	case pb.API_JoinRoom:
+		user.JoinRoom(b)
+	case pb.API_SendMessage:
+		user.SendMessage(b)
+	default:
+		user.Reply("无效 API")
+	}
+}
+
 type TCPConn struct {
 	Lock     sync.Mutex
 	Listener net.Listener
@@ -45,6 +59,19 @@ func (t *TCPConn) Start() {
 	}()
 }
 
+// 建立连接
+func (t *TCPConn) accept(conn net.Conn) *User {
+	t.Lock.Lock()
+	defer t.Lock.Unlock()
+	fmt.Println("新连接来了~", conn.RemoteAddr().String(), len(t.Users)+1)
+	user := &User{
+		conn: conn,
+	}
+	t.Users[conn.RemoteAddr().String()] = user
+	return user
+}
+
+// 消息处理
 func (t *TCPConn) serve(user *User) {
 	defer t.quiet(user)
 	for {
@@ -62,35 +89,30 @@ func (t *TCPConn) serve(user *User) {
 			continue
 		}
 
-		fmt.Println(string(buf[:n]))
-
 		req := &pb.Request{}
 		err = proto.Unmarshal(buf[:n], req)
 		if err != nil {
 			fmt.Println("ERROR: route unmarshal err:", err)
-
+			continue
 		}
 
+		// 根据API处理信息
 		HandleAPI(req.Api, user, req.Data)
 	}
 }
 
-func (t *TCPConn) accept(conn net.Conn) *User {
-	t.Lock.Lock()
-	defer t.Lock.Unlock()
-	fmt.Println("新连接来了~", conn.RemoteAddr().String(), len(t.Users)+1)
-	user := &User{
-		conn: conn,
-	}
-	t.Users[conn.RemoteAddr().String()] = user
-	return user
-}
-
+// 退出连接
 func (t *TCPConn) quiet(user *User) {
 	t.Lock.Lock()
 	defer t.Lock.Unlock()
 
-	// 退出保存数据库
+	// 退出保存房间数据库
+	if user.RoomId != 0 {
+		lastRoom := RoomDB[user.RoomId]
+		lastRoom.ExitRoom(user)
+	}
+
+	// 退出保存用户数据库
 	user.Logout()
 
 	// 清理连接
@@ -98,13 +120,4 @@ func (t *TCPConn) quiet(user *User) {
 
 	fmt.Println("溜了~ ", user.conn.RemoteAddr().String())
 	user.conn.Close()
-}
-
-func HandleAPI(api pb.API, user *User, b []byte) {
-	switch api {
-	case pb.API_Login:
-		user.Login(b)
-
-		// todo
-	}
 }

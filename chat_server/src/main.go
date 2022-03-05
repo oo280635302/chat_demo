@@ -1,13 +1,13 @@
 package main
 
 import (
+	"bufio"
 	"chat_server/src/common"
 	"chat_server/src/core"
 	"fmt"
 	"os"
-	"os/signal"
-	"syscall"
-	"time"
+	"strconv"
+	"strings"
 )
 
 func main() {
@@ -27,22 +27,40 @@ func main() {
 		fmt.Println("ERROR: Listen tcp 8888 err:", err)
 		return
 	}
-	defer s.End()
 	s.Start()
+	defer s.End()
 
+	// GM
 	for {
-		time.Sleep(time.Second * 5)
-		fmt.Println("当前连接：", len(s.Users), s.Users)
-		fmt.Println("数据库数据：", core.UserDB)
+		reader := bufio.NewReader(os.Stdin)
+		line, _, err := reader.ReadLine()
+		if err != nil {
+			fmt.Println("ERROR: os stdin err:", err)
+			break
+		}
+		if len(line) == 0 {
+			continue
+		}
+		if line[0] != '/' {
+			continue
+		}
+		strs := strings.Split(string(line), " ")
+		if len(strs) != 2 {
+			continue
+		}
+		switch strs[0] {
+		case "/stats":
+			core.GetUserInfo(strs[1])
+		case "/popular":
+			id, _ := strconv.Atoi(strs[1])
+			if id <= 0 {
+				fmt.Println("错误的房间号: ", id)
+				continue
+			}
+			core.GetPopular(int64(id))
+		default:
+			continue
+		}
 	}
 
-	signalChan := make(chan os.Signal, 1)
-	signal.Notify(signalChan,
-		syscall.SIGINT,
-		syscall.SIGILL,
-		syscall.SIGFPE,
-		syscall.SIGSEGV,
-		syscall.SIGTERM,
-		syscall.SIGABRT)
-	<-signalChan
 }
