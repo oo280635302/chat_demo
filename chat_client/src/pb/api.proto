@@ -5,8 +5,6 @@ package proto;
 enum API {
     None = 0;
     Login = 1;
-    JoinRoom = 2;
-    SendMessage = 3;
 }
 
 message Request {
@@ -16,12 +14,4 @@ message Request {
 
 message LoginReq {
     string user_name = 1;
-}
-
-message JoinRoomReq{
-    int64 room_id = 1;
-}
-
-message SendMessageReq{
-    string msg = 1;
 }

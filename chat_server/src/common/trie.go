@@ -22,6 +22,7 @@ func NewTrieNode() *TrieNode {
 	return &TrieNode{Node: map[rune]*TrieNode{}}
 }
 
+// 填充树
 func (t *TrieNode) Insert(str string) {
 	if len(str) == 0 {
 		return
@@ -37,6 +38,8 @@ func (t *TrieNode) Insert(str string) {
 	cur.End = true
 }
 
+// 替换函数
+// TODO 优化建议：1.跳过已被替换的符号，2.是否有办法跳过第一次首字母的重复匹配
 func (t *TrieNode) Replace(str string) string {
 	n := len(str)
 	s := []rune(str)
@@ -48,8 +51,9 @@ func (t *TrieNode) Replace(str string) string {
 			continue
 		}
 
-		// 匹配成功
+		// 从当前字母开始匹配
 		node := t
+		// 匹配最长情况使用 end 来保存最后一次结束节点
 		j, end := idx, -1
 		for j < n {
 			// 找不到暂停
@@ -63,6 +67,7 @@ func (t *TrieNode) Replace(str string) string {
 			j++
 		}
 
+		// end不是-1说明匹配到了 进行替换
 		if end != -1 {
 			for i := idx; i < end+1; i++ {
 				ans[i] = '*'
