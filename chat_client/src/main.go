@@ -1,7 +1,9 @@
 package main
 
 import (
+	pb "chat_client/src/pb"
 	"fmt"
+	"github.com/gogo/protobuf/proto"
 	"net"
 	"time"
 )
@@ -14,14 +16,33 @@ func main() {
 	}
 	defer conn.Close()
 
-	//for {
-	s := "what are you 弄啥？"
-	_, err = conn.Write([]byte(s))
-	if err != nil {
-		fmt.Println("writ err:", err)
-		return
+	go func() {
+		req := &pb.LoginReq{UserName: "小三"}
+		b, _ := proto.Marshal(req)
+		request := &pb.Request{
+			Api:  pb.API_Login,
+			Data: b,
+		}
+		b, _ = proto.Marshal(request)
+		_, err = conn.Write(b)
+		if err != nil {
+			fmt.Println("writ err:", err)
+			return
+		}
+		time.Sleep(time.Second)
+	}()
+
+	for {
+		buf := make([]byte, 4096)
+		n, err := conn.Read(buf)
+		if err != nil {
+			fmt.Println("read err:", err)
+			return
+		}
+		if n == 0 {
+			continue
+		}
+		fmt.Println(string(buf[:n]))
 	}
-	time.Sleep(time.Second)
-	//}
 
 }

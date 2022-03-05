@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="301bedf7-5d08-4a71-9712-4b30b1231171" name="Default Changelist" comment="">
+    <list default="true" id="301bedf7-5d08-4a71-9712-4b30b1231171" name="Default Changelist" comment="tcp">
+      <change afterPath="$PROJECT_DIR$/chat_client/src/pb/api.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat_client/src/pb/api.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat_server/src/core/room.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat_client/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/chat_client/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat_client/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_client/src/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_server/src/conn/conn.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/conn/conn.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat_server/src/common/trie.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/common/trie.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat_server/src/conn/api.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat_server/src/conn/conn.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/core/route.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat_server/src/core/Init.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/core/Init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat_server/src/core/online.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/core/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat_server/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat_server/src/pb/api.proto" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/pb/api.proto" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,14 +53,30 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/chat_client/src" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\chat_demo\chat_client\src" />
+      <recent name="D:\work\chat_demo\chat_server\src\core" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\work\chat_demo\chat_server\src\conn" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Go Test.Benchmark_Trie in chat_server/src/tool">
     <configuration name="go build chat_client.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -102,6 +129,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="脏词库" />
