@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="301bedf7-5d08-4a71-9712-4b30b1231171" name="Default Changelist" comment="tcp">
-      <change afterPath="$PROJECT_DIR$/chat_client/src/pb/api.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat_client/src/pb/api.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat_server/src/core/room.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_client/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/chat_client/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_client/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_client/src/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_server/src/common/trie.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/common/trie.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_server/src/conn/api.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_server/src/conn/conn.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/core/route.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_server/src/core/Init.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/core/Init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_server/src/core/online.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/core/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_server/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_server/src/pb/api.proto" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/pb/api.proto" afterDir="false" />
-    </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="301bedf7-5d08-4a71-9712-4b30b1231171" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,25 +43,13 @@
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\work\chat_demo\chat_server\src\conn" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\work\chat_demo\chat_client\src" />
       <recent name="D:\work\chat_demo\chat_server\src\core" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\work\chat_demo\chat_server\src\conn" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Go Test.Benchmark_Trie in chat_server/src/tool">
     <configuration name="go build chat_client.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -133,9 +106,16 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="MAIN">
+        <entry key="1">
           <value>
             <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -144,7 +124,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="脏词库" />
     <MESSAGE value="tcp" />
-    <option name="LAST_COMMIT_MESSAGE" value="tcp" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -163,10 +144,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="714" y="389" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1646285004666" />
-    <state x="342" y="212" width="1018" height="714" key="CommitChangelistDialog2" timestamp="1646390489677">
+    <state x="342" y="212" width="1018" height="714" key="CommitChangelistDialog2" timestamp="1646470544405">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="342" y="212" width="1018" height="714" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1646390489677" />
+    <state x="342" y="212" width="1018" height="714" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1646470544405" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1646359922669">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -207,10 +188,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1646285119016" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1646390715722">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1646470548348">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1646390715722" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1646470548348" />
     <state x="649" y="311" key="git4idea.merge.GitPullDialog" timestamp="1646470526828">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
