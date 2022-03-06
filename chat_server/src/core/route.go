@@ -19,7 +19,7 @@ func HandleAPI(api pb.API, user *User, b []byte) {
 	case pb.API_SendMessage:
 		user.SendMessage(b)
 	default:
-		user.Reply("无效 API")
+		user.reply("无效 API")
 	}
 }
 
@@ -108,8 +108,11 @@ func (t *TCPConn) quiet(user *User) {
 
 	// 退出保存房间数据库
 	if user.RoomId != 0 {
-		lastRoom := RoomDB[user.RoomId]
-		lastRoom.ExitRoom(user)
+
+		room := Rooms.GetRoom(user.RoomId)
+		if room != nil {
+			room.ExitRoom(user)
+		}
 	}
 
 	// 退出保存用户数据库

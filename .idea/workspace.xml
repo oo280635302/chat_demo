@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="301bedf7-5d08-4a71-9712-4b30b1231171" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/chat_server/src/core/roomGroup.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_client/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_client/src/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_client/src/pb/api.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_client/src/pb/api.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_client/src/pb/api.proto" beforeDir="false" afterPath="$PROJECT_DIR$/chat_client/src/pb/api.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_server/src/common/trie.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/common/trie.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat_server/src/core/Init.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/core/Init.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat_server/src/core/room.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/core/room.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat_server/src/core/route.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/core/route.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat_server/src/core/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/core/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat_server/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/main.go" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +46,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/chat_client/src/pb" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
@@ -152,7 +148,8 @@
     <MESSAGE value="脏词库" />
     <MESSAGE value="tcp" />
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="最高频率的词 + 文档" />
+    <option name="LAST_COMMIT_MESSAGE" value="最高频率的词 + 文档" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

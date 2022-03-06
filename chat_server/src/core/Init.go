@@ -2,19 +2,20 @@ package core
 
 import (
 	"fmt"
+	"sync"
 	"time"
 )
 
+var Rooms *RoomGroup       // 房间组
 var UserDB map[string]User // 用户库
-var RoomDB map[int64]*Room // 房间库
 
 const (
 	CHAT_TMP = "【%s】: %s" // 消息模板
 )
 
 func Init() {
+	Rooms = &RoomGroup{Rooms: sync.Map{}}
 	UserDB = make(map[string]User)
-	RoomDB = make(map[int64]*Room)
 }
 
 // 获取用户的在线时长
@@ -35,8 +36,12 @@ func GetUserInfo(str string) {
 
 // 获取当前房间10分钟
 func GetPopular(id int64) {
-	room := RoomDB[id]
-	if room == nil || len(room.AllRecord) == 0 {
+	room := Rooms.GetRoom(id)
+	if room == nil {
+		fmt.Println("房间不存在")
+		return
+	}
+	if len(room.AllRecord) == 0 {
 		fmt.Println("当前房间最近10分钟没有聊天记录~")
 		return
 	}

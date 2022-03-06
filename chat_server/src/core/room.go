@@ -1,6 +1,7 @@
 package core
 
 import (
+	"chat_server/src/common"
 	"fmt"
 	"strings"
 	"sync"
@@ -26,23 +27,13 @@ type ChatRecord struct {
 	Words        []string // 词
 }
 
-func CreateRoom(roomId int64) *Room {
-	roomData := &Room{}
-	roomData.Id = roomId
-	roomData.Users = make(map[string]*User, 100)
-	roomData.HotRecord = make(map[string]int64, 100)
-
-	RoomDB[roomId] = roomData
-
-	return roomData
-}
-
+// 加入房间
 func (r *Room) JoinRoom(user *User) {
 	r.mutex.Lock()
 	r.mutex.Unlock()
 
 	r.Users[user.UserName] = user
-	user.Reply(fmt.Sprintf("欢迎进入房间号:%d", r.Id))
+	user.reply(fmt.Sprintf("欢迎进入房间号:%d\n", r.Id))
 
 	// 发送近50条聊天记录
 	s := len(r.AllRecord) - 50
@@ -51,20 +42,21 @@ func (r *Room) JoinRoom(user *User) {
 	}
 
 	sb := strings.Builder{}
+	defer sb.Reset()
 	for _, v := range r.AllRecord[s:] {
 		sb.WriteString(fmt.Sprintf("【%s】: %s\n", v.SendUserName, v.Content))
 	}
-	user.Reply(sb.String())
+	user.reply(sb.String())
 }
 
-// 用户退出房间
+// 退出房间
 func (r *Room) ExitRoom(user *User) {
 	r.mutex.Lock()
 	defer r.mutex.Unlock()
 
 	delete(r.Users, user.UserName)
 
-	user.Reply(fmt.Sprintf("你退出了房间号:%d", r.Id))
+	user.reply(fmt.Sprintf("你退出了房间号:%d", r.Id))
 }
 
 // 广播消息
@@ -72,6 +64,10 @@ func (r *Room) BroadMessage(userName, msg string) {
 	r.mutex.Lock()
 	defer r.mutex.Unlock()
 
+	// 脏词过滤
+	msg = common.Trie.Replace(msg, '*')
+
+	// 分词
 	words := strings.Split(msg, " ")
 	tm := time.Now().Unix()
 
@@ -100,7 +96,7 @@ func (r *Room) BroadMessage(userName, msg string) {
 		fmt.Println(user, user.IsOnline)
 		if user != nil && user.IsOnline {
 			fmt.Println("广播消息", fmt.Sprintf(CHAT_TMP, record.SendUserName, record.Content))
-			user.Reply(fmt.Sprintf(CHAT_TMP, record.SendUserName, record.Content))
+			user.reply(fmt.Sprintf(CHAT_TMP, record.SendUserName, record.Content))
 		}
 	}
 }

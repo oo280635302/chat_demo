@@ -1,8 +1,8 @@
 package core
 
 import (
-	"chat_server/src/common"
 	pb "chat_server/src/pb"
+	"fmt"
 	"github.com/gogo/protobuf/proto"
 	"net"
 	"sync"
@@ -26,7 +26,7 @@ func (u *User) Login(b []byte) {
 	proto.Unmarshal(b, req)
 
 	if len(u.UserName) != 0 {
-		u.Reply("不要重复登录")
+		u.reply("不要重复登录")
 		return
 	}
 	u.mutex.Lock()
@@ -45,7 +45,7 @@ func (u *User) Login(b []byte) {
 		// 修改用户
 	} else {
 		if user.IsOnline {
-			u.Reply("该用户正在登陆")
+			u.reply("该用户正在登陆")
 			return
 		}
 
@@ -56,9 +56,9 @@ func (u *User) Login(b []byte) {
 	u.UserName = req.UserName
 
 	// 保存数据库
-	u.Save()
+	u.save()
 
-	u.Reply("登陆成功")
+	u.reply("登陆成功")
 }
 
 // 登出
@@ -79,7 +79,7 @@ func (u *User) Logout() {
 	u.RoomId = 0
 
 	// 保存
-	u.Save()
+	u.save()
 }
 
 // 加入房间
@@ -88,7 +88,7 @@ func (u *User) JoinRoom(b []byte) {
 	proto.Unmarshal(b, req)
 
 	if req.RoomId <= 0 {
-		u.Reply("无效的房间号")
+		u.reply("无效的房间号")
 		return
 	}
 
@@ -97,23 +97,19 @@ func (u *User) JoinRoom(b []byte) {
 
 	// 退出之前的房间
 	if u.RoomId != 0 {
-		RoomDB[u.RoomId].ExitRoom(u)
+		lastRoom := Rooms.GetRoom(u.RoomId)
+		if lastRoom != nil {
+			lastRoom.ExitRoom(u)
+		}
 	}
 
 	u.RoomId = req.RoomId
 
-	roomData, ok := RoomDB[req.RoomId]
-	// 没有就新建
-	if !ok {
-		roomData = CreateRoom(req.RoomId)
-	}
-	roomData.Users[u.UserName] = u
-
-	// 加入房间
-	roomData.JoinRoom(u)
+	room := Rooms.GetOrCreateRoom(u.RoomId)
+	room.JoinRoom(u)
 
 	// 保存数据
-	u.Save()
+	u.save()
 }
 
 // 发送消息
@@ -122,26 +118,27 @@ func (u *User) SendMessage(b []byte) {
 	proto.Unmarshal(b, req)
 
 	if len(u.UserName) == 0 {
-		u.Reply("需要登录")
+		u.reply("需要登录")
 		return
 	}
 
 	if u.RoomId == 0 {
-		u.Reply("需要在房间内才能聊天")
+		u.reply("需要在房间内才能聊天")
 		return
 	}
 
-	room := RoomDB[u.RoomId]
-
-	// 脏词过滤
-	msg := common.Trie.Replace(req.Msg, '*')
+	room := Rooms.GetRoom(u.RoomId)
+	if room == nil {
+		fmt.Println("ERROR:User SendMessage Get Room err:", u.RoomId)
+		return
+	}
 
 	// 广播
-	room.BroadMessage(u.UserName, msg)
+	room.BroadMessage(u.UserName, req.Msg)
 }
 
 // 保存用户数据
-func (u *User) Save() {
+func (u *User) save() {
 	UserDB[u.UserName] = User{
 		UserName:      u.UserName,
 		RoomId:        u.RoomId,
@@ -152,6 +149,6 @@ func (u *User) Save() {
 }
 
 // 回复消息
-func (u *User) Reply(str string) {
+func (u *User) reply(str string) {
 	u.conn.Write([]byte(str))
 }
