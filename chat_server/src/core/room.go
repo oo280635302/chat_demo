@@ -30,7 +30,7 @@ type ChatRecord struct {
 // 加入房间
 func (r *Room) JoinRoom(user *User) {
 	r.mutex.Lock()
-	r.mutex.Unlock()
+	defer r.mutex.Unlock()
 
 	r.Users[user.UserName] = user
 	user.reply(fmt.Sprintf("欢迎进入房间号:%d\n", r.Id))

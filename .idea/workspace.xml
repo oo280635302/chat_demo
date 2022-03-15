@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="301bedf7-5d08-4a71-9712-4b30b1231171" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="301bedf7-5d08-4a71-9712-4b30b1231171" name="Default Changelist" comment="1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat_server/src/core/room.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/core/room.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat_server/src/core/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/chat_server/src/core/user.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,18 +57,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\work\chat_demo\chat_server\src\conn" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Go Build.go build chat_server/src">
     <configuration name="go build chat_client.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -166,10 +157,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="342" y="212" width="1018" height="714" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1646470544405" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1646359922669">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1647236048914">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1646359922669" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1647236048914" />
     <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1646303408437">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -202,6 +193,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1646303408437" />
+    <state x="823" y="230" key="RollbackChangesDialog" timestamp="1646900492524">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="823" y="230" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1646900492524" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1646285119016">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -210,10 +205,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1646470548348" />
-    <state x="649" y="311" key="git4idea.merge.GitPullDialog" timestamp="1646470526828">
+    <state x="649" y="311" key="git4idea.merge.GitPullDialog" timestamp="1647322592710">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="649" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1646470526828" />
+    <state x="649" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1647322592710" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1646359518304">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

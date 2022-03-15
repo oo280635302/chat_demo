@@ -63,12 +63,13 @@ func (u *User) Login(b []byte) {
 
 // 登出
 func (u *User) Logout() {
-	u.mutex.Lock()
-	u.mutex.Unlock()
 
 	if len(u.UserName) == 0 {
 		return
 	}
+
+	u.mutex.Lock()
+	defer u.mutex.Unlock()
 
 	u.IsOnline = false
 	// 在线时长
